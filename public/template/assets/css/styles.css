@@ -83,6 +83,67 @@ body.dark-theme{
   --input-color: hsl(var(--hue-color), 29%, 16%);
 }
 
+/* Style pour la page 404 */
+.notfound-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--body-color);
+}
+
+.notfound-container {
+    text-align: center;
+}
+
+.notfound-card {
+    background-color: var(--container-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 252px rgba(0, 0, 0, 0.1);
+}
+
+.notfound-card h1 {
+    font-size: var(--big-font-size);
+    color: var(--title-color);
+}
+
+.notfound-card h2 {
+    font-size: var(--h2-font-size);
+    color: var(--first-color);
+}
+
+.notfound-card p {
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+    margin-bottom: var(--mb-2);
+}
+
+.btn-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-weight: var(--font-medium);
+    background-color: var(--first-color);
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-link:hover {
+    background-color: var(--first-color-alt);
+}
+
+/* Responsive styles */
+@media screen and (min-width: 968px) {
+    :root {
+        --big-font-size: 3rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+    }
+}
+
+
 /*========== Button Dark/Light ==========*/
 .change_theme{
   color: var(--title-color);
