@@ -1,43 +1,21 @@
-  <header class="header" id="header">
-            <nav class="nav container">
-                <a href="#home" class="nav_logo">
-                    John Doe
-                </a>
-
-                <div class="nav_menu" id="nav-menu">
-                    <ul class="nav_list">
-                        <li class="nav-item">
-                            <a href="#home" class="nav_link active_link">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#about" class="nav_link">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#skills" class="nav_link">Skills</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#services" class="nav_link">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#portfolio" class="nav_link">Portfolio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#contact" class="nav_link">Contact Me</a>
-                        </li>
-                    </ul>
-
-                    <div class="nav_close" id="nav-close">
-                        <i class="uil uil-times nav_close" id="nav-close"></i>
-                    </div>
-                </div>
-
-                <div class="nav_btns">
-                    <!--===== THEME CHANGE BUTTON =====-->
-                    <i class="uil uil-moon change_theme" id="theme-button"></i>
-
-                    <div class="nav_toogle" id="nav-toggle">
-                        <i class="uil uil-bars"></i>
-                    </div>
-                </div>
-            </nav>
- </header>
+  <header>
+        <nav>
+            <ul>
+                <li><img src="../../template/assets/img/logo.png" alt=""></li>
+            </ul>
+            <ul class="header-profile">
+                <li class="avatar-item"><img src="../../template/assets/img/avatar.jpg" alt="" class="avatar-img"></li>
+                <li><span>team2devs.com</span></li>
+            </ul>
+        </nav>
+        <span class="header-profile-nav">
+            <span> <i class="fa fa-sort-up"></i></span>
+            <ul>
+                <li><a href="profile.html">Profile</a></li>
+                <hr class="hr">
+                <li><a href="#">Message</a></li>
+                <hr class="hr">
+                <li><a href="login.html">Logout</a></li>
+            </ul>
+        </span>
+    </header>
