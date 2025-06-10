@@ -625,6 +625,8 @@ aside>nav {
 
 .nav-list>ul>li {
   margin-bottom: 0.5rem;
+
+
 }
 
 .nav-list>ul>li>a {
@@ -635,16 +637,20 @@ aside>nav {
   position: relative;
   padding: 5px 15px;
   margin-bottom: 5px;
+  margin-left: 0.2rem;
+
 }
 
 .nav-list>ul>li>a:hover {
   color: #2E7D32;
   background-color: #C8E6C9; /* Vert hover clair */
-  margin-left: 0.2rem;
+  margin-left: 0.4rem;
 }
 
 .nav-list>ul>li>a>span {
   padding: 0.5rem;
+  border-bottom: 2 px solid #2E7D32;
+
 }
 
 .sub_nav-list {

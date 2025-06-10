@@ -37,9 +37,15 @@
                             <label for="description">Description</label>
                             <textarea cols="10" rows="3" id="description"
                             name="description"
-                            value="{{ isset($about->description) ? $about->description : '' }}"
                             placeholder="Enter a brief description about yourself"                          
-                            ></textarea>
+                            >{{ isset($about->description) ? $about->description : '' }}</textarea>
+                           
+                            <label for="summary">Summary</label>
+                            <textarea cols="10" rows="3" id="summary"
+                            name="summary"
+                            placeholder="Enter a brief summary about yourself"                          
+                            >{{ isset($about->summary) ? $about->summary : '' }}</textarea>
+                           
                         </div>
                         <div class="card">
                             <label for="tagline">Tagline</label>
@@ -53,11 +59,26 @@
                     </div>
                     <div class="wrapper_right">
                         <div class="card">
-                            <img src="../../template/assets/img/avatar.jpg" class="avatar_img">
+                            <img
+                             src="
+                            {{ 
+                                isset($about->home_image) ? 
+                                asset('images/'.$about->home_image) :
+                                asset('template/assets/img/avatar.jpg') 
+                            }}" 
+                            class="avatar_img">
                             <input type="file" id="home_image">
                         </div>
                         <div class="card">
-                            <img src="../../template/assets/img/avatar.jpg" class="avatar_img">
+                            <img src="
+                            {{ 
+                                isset($about->banner_image) ? 
+                                asset('images/'.$about->banner_image) :
+                                asset('template/assets/img/avatar.jpg') 
+                            }}
+                            "
+                            
+                            class="avatar_img">
                             <input type="file" id="banner_image">
                         </div>
                         <div class="card">

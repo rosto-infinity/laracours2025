@@ -7,13 +7,13 @@
                 <div class="nav-list">
                     <ul>
                         <li>
-                            <a class="nav-active" href="dashboard.html">
+                            <a class="nav-active" href="{{ route('home-page') }}">
                                 <span><i class="fas fa-home"> </i></span>
                                 <span>Home</span>
                             </a>
                         </li>
                         <li>
-                            <a  href="about.html">
+                            <a  href="{{ route('edit-about') }}">
                                 <span><i class="fas fa-home"> </i></span>
                                 <span>About Me</span>
                             </a>
