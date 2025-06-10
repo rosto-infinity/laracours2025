@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 // });
 
-Route::get('/', [PageController::class, 'index'])->name('pages.home-page.index-home');
+Route::get('/', [PageController::class, 'index'])->name('home-page');
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard.admin');
 Route::get('/admin/abouts', [AboutController::class, 'edit'])->name('edit-about');
 

@@ -1,13 +1,13 @@
   <header class="header" id="header">
             <nav class="nav container">
-                <a href="#home" class="nav_logo">
+                <a href="{{ route('home-page') }}" class="nav_logo">
                     John Doe
                 </a>
 
                 <div class="nav_menu" id="nav-menu">
                     <ul class="nav_list">
                         <li class="nav-item">
-                            <a href="#home" class="nav_link active_link">Home</a>
+                            <a href="{{ route('home-page') }}" class="nav_link active_link">Home</a>
                         </li>
                         <li class="nav-item">
                             <a href="#about" class="nav_link">About</a>

@@ -1,6 +1,6 @@
 /*@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css');*/
 /* ==========================================================================
-  Custom Properties bg rgba(241, 241, 241, 1);
+  Custom Properties
 ========================================================================== */
 
 :root {
@@ -27,7 +27,7 @@
 }
 
 ::selection {
-  background-color:  #6E57E0; 
+  background-color: #4CAF50; /* Vert de sélection */
   color: white;
 }
 
@@ -105,16 +105,16 @@ h6 {
 }
 
 p {
-  color: #6a727a;
+  color: #4a725a; /* Vert texte */
   font-weight: 500;
 }
 
 a {
-  color: #6a727a;
+  color: #388E3C; /* Vert liens */
 }
 
 a:hover {
-  color: #6a727a;
+  color: #2E7D32; /* Vert liens hover */
 }
 
 hr {
@@ -263,6 +263,9 @@ input[type="email"],
 input[type="password"],
 textarea,
 select {
+  border: 1px solid #A5D6A7; /* Vert clair */
+  border-top-color: #81C784; /* Vert medium */
+  background-color: rgb(255, 255, 255);
   padding: 0.6em 0.6em;
   font-family: var(--font-familly);
   font-size: 1em;
@@ -272,9 +275,6 @@ select {
   line-height: 24px;
   border-radius: 0.25rem;
   box-sizing: border-box;
-  border: 1px solid rgb(186, 191, 195);
-  border-top-color: rgb(140, 145, 150);
-  background-color: rgb(255, 255, 255);
 }
 
 input[type="text"]:focus,
@@ -282,7 +282,7 @@ textarea:focus,
 input[type="email"]:focus,
 input[type="password"]:focus,
 select:focus {
-  border: 2px #000 solid;
+  border: 2px #2E7D32 solid; /* Vert foncé */
   outline: 0;
 }
 
@@ -389,7 +389,7 @@ td:hover {
 
 tr:hover,
 tr:nth-child(odd):hover {
-  background-color: #fdfdea;
+  background-color: #E8F5E9; /* Vert très clair */
 }
 
 tr:nth-child(odd) {
@@ -447,7 +447,7 @@ header>nav {
   width: 100%;
   margin: auto;
   border-bottom: 1px solid var(--border);
-  background-color: #6E57E0; 
+  background-color: #4CAF50; /* Vert header */
   color: rgb(255, 255, 255);
   box-shadow: 0 1px 0 0 rgba(22, 29, 37, 0.05);
 }
@@ -571,7 +571,7 @@ aside>nav {
   left: 0;
   box-sizing: border-box;
   padding-left: 0px;
-  background-color: rgb(235 235 235);
+  background-color: #E8F5E9; /* Fond sidebar vert très clair */
   border-right: 1px solid rgb(201, 204, 207);
 }
 
@@ -598,13 +598,13 @@ aside>nav {
 .nav-active {
  
   border-radius: 4px;
-  color: #6E57E0;
-  border-left: 4px solid #6E57E0;
-  background-color:#6e57e020;
+  color: #2E7D32; /* Vert actif */
+  border-left: 4px solid #2E7D32;
+  background-color: #E8F5E9; /* Fond actif */
 }
 
 .nav-active>span {
-  color: #6E57E0;
+  color: #2E7D32;
 }
 
 .nav-list {
@@ -638,8 +638,8 @@ aside>nav {
 }
 
 .nav-list>ul>li>a:hover {
-  color: #6E57E0;
-  background-color: hsla(250, 92%, 85%, 0.416);
+  color: #2E7D32;
+  background-color: #C8E6C9; /* Vert hover clair */
   margin-left: 0.2rem;
 }
 
@@ -715,7 +715,7 @@ main {
   color: white;
   padding: 6px ;
   position:relative;
-  background-color:#6E57E0;
+  background-color:#4CAF50; /* Vert pour les messages flash */
   margin-bottom: 15px;
 }
 
@@ -961,12 +961,12 @@ margin-top: 20px;
 }
 
 .secondary {
-  background: linear-gradient(to bottom, #6E57E0, #5563c1);
+  background: linear-gradient(to bottom, #4CAF50, #388E3C); /* Dégradé vert */
   color: white;
 }
 
 .secondary:hover {
-  background: linear-gradient(to bottom, #6371c7, #5563c1);
+  background: linear-gradient(to bottom, #388E3C, #2E7D32); /* Dégradé vert foncé */
   color: white;
 }
 
@@ -1115,7 +1115,7 @@ color: gray;
 
 .skills_percentage{
   display: block;
-  background-color: #6E57E0;
+  background-color: #4CAF50; /* Barre de compétences verte */
 }
 
 .overview_right{
@@ -1337,7 +1337,7 @@ color: gray;
 }
 
 .table_skills-bar { 
-  background-color: #6E57E0;
+  background-color: #4CAF50; /* Barre de compétences verte */
 }
 
 .table_skills-bar, .table_skills-percentage {
@@ -1717,8 +1717,8 @@ opacity: 95%;
 .loader {
   width: 48px;
   height: 48px;
-  border: 5px solid #6E57E0;
-  border-bottom-color: #89a4ff;
+  border: 5px solid #4CAF50; /* Vert */
+  border-bottom-color: #81C784; /* Vert clair */
   border-radius: 50%;
   display: inline-block;
   box-sizing: border-box;

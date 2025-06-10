@@ -4,24 +4,30 @@
 /*==================== VARIABLES CSS ====================*/
 :root {
     
-     --header-height: 3rem;
+    --header-height: 3rem;
     /*========== Colors ==========*/
     /* Change favorite color */
-    --hue-color: 250; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+    --hue-color: 142; /*Vert naturel (anciennement 250 pour violet)*/
 
-    /* HSL color mode */
-    --first-color: hsl(var(--hue-color), 69%, 61%);
-    --first-color-second: hsl(var(--hue-color), 69%, 61%);
-    --first-color-alt: hsl(var(--hue-color), 57%, 53%);
-    --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
-    --title-color: hsl(var(--hue-color), 8%, 15%);
-    --text-color: hsl(var(--hue-color), 8%, 45%);
-    --text-color-light: hsl(var(--hue-color), 8%, 65%);
-    --input-color: hsl(var(--hue-color), 70%, 96%);
-    --body-color: hsl(var(--hue-color), 60%, 99%);
-    --container-color: #fff;
-    --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
-    --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+    /* HSL color mode - Palette verte optimisée */
+    --first-color: hsl(var(--hue-color), 70%, 55%); /*Vert vif*/
+    --first-color-second: hsl(var(--hue-color), 65%, 50%); /*Plus saturé*/
+    --first-color-alt: hsl(var(--hue-color), 60%, 45%); /*Profondeur*/
+    --first-color-lighter: hsl(var(--hue-color), 85%, 85%); /*Dégradé clair*/
+    
+    /* Textes */
+    --title-color: hsl(var(--hue-color), 15%, 20%); /*Noir verdâtre lisible*/
+    --text-color: hsl(var(--hue-color), 12%, 40%); /*Gris-vert*/
+    --text-color-light: hsl(var(--hue-color), 10%, 65%); /*Léger*/
+    
+    /* Arrière-plans */
+    --input-color: hsl(var(--hue-color), 60%, 96%); /*Fond clair*/
+    --body-color: hsl(var(--hue-color), 50%, 98%); /*Presque blanc teinté*/
+    --container-color: #fff; /*Blanc pur*/
+    
+    /* Scrollbar */
+    --scroll-bar-color: hsl(var(--hue-color), 20%, 90%); /*Très léger*/
+    --scroll-thumb-color: hsl(var(--hue-color), 20%, 75%); /*Contraste doux*/
 
     /*========== Font and typography ==========*/
     --body-font: 'Poppins', sans-serif;
@@ -70,18 +76,28 @@
 }
 
 /*========== Variables Dark theme ==========*/
-body.dark-theme{
-  --first-color-dark: hsl(var(--hue-color), 8%, 20%);
-  --first-color-second: hsl(var(--hue-color), 30%, 8%);
-  --title-color: hsl(var(--hue-color), 4%, 95%);
-  --text-color: hsl(var(--hue-color), 4%, 75%);
-  --body-color: hsl(var(--hue-color), 28%, 12%);
-  --container-color: hsl(var(--hue-color), 8%, 6%);
-  --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
-  --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
-  --box-shadow: 2px 2px 18px rgb(hsl(var(--input-color)));
-  --input-color: hsl(var(--hue-color), 29%, 16%);
+body.dark-theme {
+  /* Couleurs de base */
+  --first-color-dark: hsl(var(--hue-color), 15%, 25%); /* Vert foncé mat */
+  --first-color-second: hsl(var(--hue-color), 35%, 10%); /* Fond profond */
+  --title-color: hsl(var(--hue-color), 10%, 98%); /* Blanc verdâtre (luminosité 98%) */
+  --text-color: hsl(var(--hue-color), 10%, 80%); /* Gris-vert clair */
+  
+  /* Arrière-plans */
+/* Couleurs de base - Bleu nuit */
+--body-color: hsl(220, 28%, 12%); /* Fond sombre légèrement bleuté */
+--container-color: hsl(220, 32%, 6%); /* Noir bleuté intense (contraste +30%) */
+--input-color: hsl(220, 25%, 20%); /* Champs visibles sans éblouissement */
+
+
+  /* Scrollbar */
+  --scroll-bar-color: hsl(var(--hue-color), 20%, 25%); /* Discrète */
+  --scroll-thumb-color: hsl(var(--hue-color), 20%, 40%); /* Repère visuel */
+  
+  /* Effets */
+  --box-shadow: 0 4px 20px hsla(var(--hue-color), 40%, 5%, 0.6); /* Ombre profonde */
 }
+
 
 /* Style pour la page 404 */
 .notfound-body {
