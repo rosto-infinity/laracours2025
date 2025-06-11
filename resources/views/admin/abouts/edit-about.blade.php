@@ -4,8 +4,11 @@
 
     <!--==================== ABOUT ====================-->
             <section class="about" id="about">
-                  
+                 <form action="{{ route('update-about', $about->id) }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('PATCH') 
                 @include('admin.abouts.form-about',['formMode' => 'edit'])
+                </form>
                 <div class="card-wrapper" style="margin-top:-5px">
                     <div class="wrapper_left">
                         <div class="card">

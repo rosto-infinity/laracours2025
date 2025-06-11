@@ -5,7 +5,8 @@
             <section class="home section" id="home">
                 <div class="home_container container grid">
                     <div class="home_img">
-                        <img src="../../template/assets/img/home.png" alt="fff">
+                        <img src="{{ isset($abouts->home_image) ? asset('storage/images/'.$abouts->home_image) :  asset('template/assets/img/avatar.jpg') }}"
+                         alt="fff">
                     </div>
 
                     <div class="home_data">
@@ -73,12 +74,13 @@
                <span class="section__subtitle">My introduction</span>
 
                <div class="about_container container grid">
-                 <img src="../../template/assets/img/about-img.png" alt="" class="about_img">
+                 <img src="{{ isset($abouts->banner_image) ? asset('storage/images/'.$abouts->banner_image) :  asset('template/assets/img/avatar.jpg') }}"
+                 
+                 alt="" class="about_img">
 
                  <div class="about_data">
                     <p class="about_description">
-                        FullStack Web developer, with extencive knowledge and years of experience,
-                        working in web technologies and UI/UX design, delivering quality work
+                       Développeur Web FullStack, avec de vastes connaissances et des années d'expérience, travaillant dans les technologies Web et la conception UI/UX, fournissant un travail de qualité
                     </p>
                     <div class="about_info">
                         <div>

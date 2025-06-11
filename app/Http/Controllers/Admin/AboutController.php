@@ -48,7 +48,7 @@ class AboutController extends Controller
 
     // // Gestion des fichiers
     // $fileFields = [
-    //     'home_image' => 'images',
+    //     'home_image' => 'storage/images',
     //     'banner_image' => 'images',
     //     'cv' => 'cvs'
     // ];
@@ -56,42 +56,42 @@ class AboutController extends Controller
     // Gestion de home_image
 if ($request->hasFile('home_image')) {
     if ($about->home_image) {
-        $oldImagePath = public_path("images/{$about->home_image}");
+        $oldImagePath = public_path("storage/images/{$about->home_image}");
         if (file_exists($oldImagePath)) {
             unlink($oldImagePath);
         }
     }
     $file = $request->file('home_image');
     $fileName = time() . '_home_image.' . $file->getClientOriginalExtension();
-    $file->move(public_path('images'), $fileName);
+    $file->move(public_path('storage/images'), $fileName);
     $about->home_image = $fileName;
 }
 
 // Gestion de banner_image
 if ($request->hasFile('banner_image')) {
     if ($about->banner_image) {
-        $oldBannerPath = public_path("images/{$about->banner_image}");
+        $oldBannerPath = public_path("storage/images/{$about->banner_image}");
         if (file_exists($oldBannerPath)) {
             unlink($oldBannerPath);
         }
     }
     $file = $request->file('banner_image');
     $fileName = time() . '_banner_image.' . $file->getClientOriginalExtension();
-    $file->move(public_path('images'), $fileName);
+    $file->move(public_path('storage/images'), $fileName);
     $about->banner_image = $fileName;
 }
 
 // Gestion du CV
 if ($request->hasFile('cv')) {
     if ($about->cv) {
-        $oldCvPath = public_path("cvs/{$about->cv}");
+        $oldCvPath = public_path("storage/cvs/{$about->cv}");
         if (file_exists($oldCvPath)) {
             unlink($oldCvPath);
         }
     }
     $file = $request->file('cv');
     $fileName = time() . '_cv.' . $file->getClientOriginalExtension();
-    $file->move(public_path('cvs'), $fileName);
+    $file->move(public_path('storage/cvs'), $fileName);
     $about->cv = $fileName;
 }
 

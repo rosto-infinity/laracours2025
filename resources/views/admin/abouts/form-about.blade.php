@@ -83,7 +83,7 @@
                                 placeholder="Upload your CV">
                             @if(isset($about->cv) && $about->cv)
                                 <p>
-                                    <a href="{{ asset('images/'.$about->cv) }}" target="_blank">Voir le CV actuel</a>
+                                    <a href="{{ asset('storage/cvs'.$about->cv) }}" target="_blank">Voir le CV actuel</a>
                                 </p>
                             @endif
                         </div>     
