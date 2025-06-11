@@ -1,9 +1,12 @@
 <div class="titlebar">
    
                     <h1>About Me</h1>
-                    <button class="secondary">
+                    <a href="{{ route('edit-about') }}" class="secondary">
+                        <i class="fas fa-refresh" >Refresh </i>
+                    </a>
+                    <button class="secondary p-2.5">
                         {{ $formMode === 'edit' ? 'Update' : '' }}
-                        <i class="fas fa-save"></i>
+                        <i class="fas fa-save"></i> 
                     </button>
                 </div>
                 
