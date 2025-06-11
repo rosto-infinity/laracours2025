@@ -5,11 +5,13 @@
             <section class="home section" id="home">
                 <div class="home_container container grid">
                     <div class="home_img">
-                        <img src="../../template/assets/img/home.png" alt="">
+                        <img src="../../template/assets/img/home.png" alt="fff">
                     </div>
 
                     <div class="home_data">
-                        <h1 class="home_title">kkkkHi, I'am John Doedeededff</h1>
+                        <h1 class="home_title">Hi, I'am
+                             {{ $abouts->name }}
+                        </h1>
                         <h3 class="home_subtitle">FullStack Web developer</h3>
                         <p class="home_description">
                             High level experience in web design,fornt-en and backend development, producing quality work.
@@ -748,15 +750,15 @@
 
                         <div>
                             <h3 class="contact_title">Call Me</h3>
-                            <span class="contact_subtitle">444-444-444</span>
+                            <span class="contact_subtitle">{{ $abouts->phone}}</span>
                         </div>
                     </div>
                     <div class="contact_information">
                         <i class="uil uil-envelope contact_icon"></i>
-
+ 
                         <div>
                             <h3 class="contact_title">Email</h3>
-                            <span class="contact_subtitle">johndoe@gmail.com</span>
+                            <span class="contact_subtitle">{{ $abouts->email}}</span>
                         </div>
                     </div>
                     <div class="contact_information">
@@ -764,7 +766,7 @@
 
                         <div>
                             <h3 class="contact_title">Location</h3>
-                            <span class="contact_subtitle">Germany-Munich Av.munich #1234</span>
+                            <span class="contact_subtitle">{{ $abouts->address}}</span>
                         </div>
                     </div>
                 </div>

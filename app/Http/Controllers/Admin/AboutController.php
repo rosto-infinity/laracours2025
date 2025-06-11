@@ -16,8 +16,7 @@ class AboutController extends Controller
     public function edit()
     {
        $about = About::latest()->first();
-   
- 
+    //    dd($about);
         return view('admin.abouts.edit-about',
             [
                 'about' => $about,
