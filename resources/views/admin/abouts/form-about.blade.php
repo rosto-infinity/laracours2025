@@ -51,17 +51,11 @@
                         </div>
                         
                     </div>
+                    {{-- {{ $about->home_image }} --}}
                     <div class="wrapper_right">
                         <div class="card">
-                            <label for="home_image">Home Image</label>
-                            <img src="
-                                {{ 
-                                   
-                                    !empty($about->home_image) ?
-                                     asset('storage/images/'.$about->home_image) :
-                                      asset('template/assets/images/avatar.jpg') 
-                                      
-                                }}"
+                            <label for="home_image"">Home Image</label>
+                            <img src="{{ isset($about->home_image) ? asset('storage/images/'.$about->home_image) :  asset('template/assets/img/avatar.jpg') }}"
                                 class="avatar_img"
                                 id="homeImage-preview"
                                 alt="Home Image Preview">
@@ -71,12 +65,7 @@
                         </div>
                         <div class="card">
                             <label for="banner_image">Banner Image</label>
-                            <img src="
-                                {{ 
-                                    isset($about->banner_image) ? 
-                                    asset('images/'.$about->banner_image) :
-                                    asset('template/assets/images/banner_image.png')
-                                }}"
+                           <img src="{{ isset($about->banner_image) ? asset('storage/images/'.$about->banner_image) :  asset('template/assets/img/avatar.jpg') }}"
                                 class="avatar_img"
                                 id="bannerImage-preview"
                                 alt="Banner Image Preview">

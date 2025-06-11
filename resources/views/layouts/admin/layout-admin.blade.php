@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Admin Portfolio Website</title>
     <!-- Fonts -->
-    <link rel="stylesheet" href="{{ asset('template/assets/fonts/fontawesome-free/css/all.min.css"') }} />
+    <link rel="stylesheet" href="{{ asset('template/assets/fonts/fontawesome-free/css/all.min.css') }} ">
     <link rel="stylesheet" href="{{asset('template/assets/fonts/unicons/css/line.css')}}">
     <!-- CSS -->
     <link rel="stylesheet" href="{{asset('template/assets/css/admin.css')}}">

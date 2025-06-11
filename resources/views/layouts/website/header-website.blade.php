@@ -38,6 +38,7 @@
                     <div class="nav_toogle" id="nav-toggle">
                         <i class="uil uil-bars"></i>
                     </div>
+                    <a href="{{ route('dashboard.admin') }}">Admin</a>
                 </div>
             </nav>
  </header>
