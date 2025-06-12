@@ -710,7 +710,7 @@ main {
 
 /*==================== REUSEABLE ====================*/
 .avatar_img {
-  /* width: 100%; */
+  width: 100%;
   height: 120px;
 }
 .flash_message {
