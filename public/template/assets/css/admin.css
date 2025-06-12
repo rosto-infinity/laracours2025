@@ -114,7 +114,7 @@ a {
 }
 
 a:hover {
-  color: #2E7D32; /* Vert liens hover */
+  color: #22c55e; /* Vert liens hover */
 }
 
 hr {
@@ -282,7 +282,7 @@ textarea:focus,
 input[type="email"]:focus,
 input[type="password"]:focus,
 select:focus {
-  border: 2px #2E7D32 solid; /* Vert foncé */
+  border: 2px #22c55e solid; /* Vert foncé */
   outline: 0;
 }
 
@@ -598,13 +598,13 @@ aside>nav {
 .nav-active {
  
   border-radius: 4px;
-  color: #2E7D32; /* Vert actif */
-  border-left: 4px solid #2E7D32;
+  color: #22c55e; /* Vert actif */
+  border-left: 4px solid #22c55e;
   background-color: #E8F5E9; /* Fond actif */
 }
 
 .nav-active>span {
-  color: #2E7D32;
+  color: #22c55e;
 }
 
 .nav-list {
@@ -642,14 +642,14 @@ aside>nav {
 }
 
 .nav-list>ul>li>a:hover {
-  color: #2E7D32;
+  color: #22c55e;
   background-color: #C8E6C9; /* Vert hover clair */
   margin-left: 0.4rem;
 }
 
 .nav-list>ul>li>a>span {
   padding: 0.5rem;
-  border-bottom: 2 px solid #2E7D32;
+  border-bottom: 2 px solid #22c55e;
 
 }
 
@@ -972,7 +972,7 @@ margin-top: 20px;
 }
 
 .secondary:hover {
-  background: linear-gradient(to bottom, #388E3C, #2E7D32); /* Dégradé vert foncé */
+  background: linear-gradient(to bottom, #388E3C, #22c55e); /* Dégradé vert foncé */
   color: white;
 }
 

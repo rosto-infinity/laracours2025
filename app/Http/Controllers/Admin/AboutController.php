@@ -28,16 +28,16 @@ class AboutController extends Controller
 {
     // Validation des champs
     $validatedData = $request->validate([
-        'name' => 'nullable|string|max:255',
-        'email' => 'nullable|email|max:255',
-        'phone' => 'nullable|string|max:20|regex:/^\+?[0-9\s\-]+$/',
-        'address' => 'nullable|string|max:255',
-        'description' => 'nullable|string',
-        'summary' => 'nullable|string',
-        'tagline' => 'nullable|string|max:255',
-        'home_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-        'banner_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-        'cv' => 'nullable|file|mimes:pdf|max:5120'
+        'name' => 'string|max:255',
+        'email' => 'email|max:255',
+        'phone' => 'string|max:20|regex:/^\+?[0-9\s\-]+$/',
+        'address' => 'string|max:255',
+        'description' => 'string',
+        'summary' => 'string',
+        'tagline' => 'string|max:255',
+        'home_image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        'banner_image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        'cv' => 'file|mimes:pdf|max:5120'
     ]);
 
     // Récupère le dernier enregistrement About
@@ -46,34 +46,25 @@ class AboutController extends Controller
     // Met à jour les champs standards
     $about->fill($validatedData);
 
-    // // Gestion des fichiers
-    // $fileFields = [
-    //     'home_image' => 'storage/images',
-    //     'banner_image' => 'images',
-    //     'cv' => 'cvs'
-    // ];
-
+   
     // Gestion de home_image
-if ($request->hasFile('home_image')) {
-    if ($about->home_image) {
-        $oldImagePath = public_path("storage/images/{$about->home_image}");
-        if (file_exists($oldImagePath)) {
+    if ($request->hasFile('home_image')) {
+        $oldImagePath = $about->home_image ? public_path("storage/images/{$about->home_image}") : null;
+        if ($oldImagePath && file_exists($oldImagePath)) {
+            // Supprime un fichier  Similaire à la fonction Unix C unlink(). En cas d'échec, une alerte de niveau E_WARNING sera générée.
             unlink($oldImagePath);
         }
+        $file = $request->file('home_image');
+        $fileName = time() . '_home_image.' . $file->getClientOriginalExtension();
+        $file->move(public_path('storage/images'), $fileName);
+        $about->home_image = $fileName;
     }
-    $file = $request->file('home_image');
-    $fileName = time() . '_home_image.' . $file->getClientOriginalExtension();
-    $file->move(public_path('storage/images'), $fileName);
-    $about->home_image = $fileName;
-}
 
 // Gestion de banner_image
 if ($request->hasFile('banner_image')) {
-    if ($about->banner_image) {
-        $oldBannerPath = public_path("storage/images/{$about->banner_image}");
-        if (file_exists($oldBannerPath)) {
-            unlink($oldBannerPath);
-        }
+    $oldBannerPath = $about->banner_image ? public_path("storage/images/{$about->banner_image}") : null;
+    if ($oldBannerPath && file_exists($oldBannerPath)) {
+        unlink($oldBannerPath);
     }
     $file = $request->file('banner_image');
     $fileName = time() . '_banner_image.' . $file->getClientOriginalExtension();
@@ -83,29 +74,34 @@ if ($request->hasFile('banner_image')) {
 
 // Gestion du CV
 if ($request->hasFile('cv')) {
-    if ($about->cv) {
-        $oldCvPath = public_path("storage/cvs/{$about->cv}");
-        if (file_exists($oldCvPath)) {
-            unlink($oldCvPath);
-        }
+    // Suppression de l'ancien fichier si présent
+    $oldCvPath = $about->cv ? public_path("storage/cvs/{$about->cv}") : null;
+    if ($oldCvPath && file_exists($oldCvPath)) {
+        unlink($oldCvPath);
     }
+    // Upload du nouveau fichier
     $file = $request->file('cv');
     $fileName = time() . '_cv.' . $file->getClientOriginalExtension();
     $file->move(public_path('storage/cvs'), $fileName);
     $about->cv = $fileName;
 }
 
+    // // Définir les champs de fichiers et leurs dossiers respectifs
+    // $fileFields = [
+    //     'home_image' => 'storage/images',
+    //     'banner_image' => 'storage/images',
+    //     'cv' => 'storage/cvs'
+    // ];
+
     // foreach ($fileFields as $field => $folder) {
     //     if ($request->hasFile($field)) {
-    //         // Suppression de l'ancien fichier
-    //         if ($about->$field) {
-    //             $oldFilePath = public_path("{$folder}/{$about->$field}");
-    //             if (file_exists($oldFilePath)) {
-    //                 unlink($oldFilePath);
-    //             }
+    //         // Suppression de l'ancien fichier si présent
+    //         $oldFilePath = $about->$field ? public_path("{$folder}/{$about->$field}") : null;
+    //         if ($oldFilePath && file_exists($oldFilePath)) {
+    //             unlink($oldFilePath);
     //         }
 
-    //         // Traitement du nouveau fichier
+    //         // Upload du nouveau fichier
     //         $file = $request->file($field);
     //         $fileName = time() . '_' . $field . '.' . $file->getClientOriginalExtension();
     //         $file->move(public_path($folder), $fileName);

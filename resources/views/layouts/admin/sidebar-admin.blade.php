@@ -7,13 +7,20 @@
             <div class="nav-list">
                 <ul>
                     <li>
-                        <a class="nav-active" href="{{ route('home-page') }}">
+                        <a  href="{{ route('home-page') }}">
+                            <span><i class="fas fa-home"></i></span>
+                            <span>Website Portfolio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="{{(request()->is('admin/dashboard'))? 'nav-active' : ''}}" href="{{ route('dashboard.admin') }}">
                             <span><i class="fas fa-home"></i></span>
                             <span>Home</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('edit-about') }}">
+                        <a class="{{(request()->is('admin/abouts'))? 'nav-active' : ''}}"
+                         href="{{ route('edit-about') }}">
                             <span><i class="fas fa-user"></i></span>
                             <span>About Me</span>
                         </a>
