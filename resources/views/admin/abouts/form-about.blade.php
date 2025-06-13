@@ -1,7 +1,7 @@
 <div class="titlebar">
    
                     <h1>About Me</h1>
-                    
+                <div>  
                     <button class="secondary p-2.5">
                         {{ $formMode === 'edit' ? 'Update' : '' }}
                         <i class="fas fa-save"></i> 
@@ -151,7 +151,7 @@
                     </div>
                         </div>     
                     </div>
-                </div>
+        </div>
 
                 <script>
                     function showHomeImageFile (event) {
