@@ -10,25 +10,29 @@
             </div>
 
         <!-- Affichage des messages flash -->
-        @if(session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif
-        @if(session('delete-success'))
-            <div class="alert alert-warning">
-                {{ session('delete-success') }}
-            </div>
-        @endif
-        @if($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif    
+    <!-- Affichage des messages flash avec Tailwind CSS -->
+@if(session('success'))
+    <div class="p-2.5 text-xl mb-4 rounded bg-green-100 text-green-800 border-l-4 border-green-500">
+        {{ session('success') }}
+    </div>
+@endif
+
+@if(session('delete-success'))
+    <div class="p-2.5 mb-4 text-xl  rounded bg-yellow-100 text-yellow-800 border-l-4 border-yellow-500">
+        {{ session('delete-success') }}
+    </div>
+@endif
+
+@if($errors->any())
+    <div class="p-2.5 mb-4 text-xl  rounded bg-red-100 text-red-800 border-l-4 border-red-500">
+        <ul class="list-disc pl-5 space-y-1">
+            @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+   
 @include('admin.services.create-services')
             <div class="table">
                 <div class="table-filter">

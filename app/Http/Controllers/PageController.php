@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Service;
 
 class PageController extends Controller
 {
@@ -10,6 +11,7 @@ class PageController extends Controller
     {
        
        $abouts = About::latest()->first();
-        return view('pages.home-page.index-home', compact('abouts'));
+       $services = Service::latest()->get();
+        return view('pages.home-page.index-home', compact('abouts','services'));
     }
 }
