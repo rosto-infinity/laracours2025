@@ -9,4 +9,10 @@ class Media extends Model
 {
     /** @use HasFactory<\Database\Factories\MediaFactory> */
     use HasFactory;
+    protected $table = 'medias'; // Force l'utilisation de la table 'medias'
+
+    protected $fillable = [
+        "link",
+        "icon",
+    ];
 }

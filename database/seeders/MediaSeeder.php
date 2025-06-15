@@ -15,12 +15,12 @@ class MediaSeeder extends Seeder
     {
         DB::table("medias")->insert([
             [
-                "link" => "https://www.facefook.com",
+                "link" => "https://www.facebook.com",
                 'icon' => 'uil uil-facefook-f',                
             ],
             [
                 "link" => "https://www.instagram.com",
-                'icon' => 'uil uil-facefook-f',                
+                'icon' => 'uil uil-facebook-f',                
             ],
         ]);
     }

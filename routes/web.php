@@ -17,7 +17,8 @@ Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('das
 Route::get('/admin/abouts', [AboutController::class, 'edit'])->name('edit-about');
 Route::patch('/admin/abouts', [AboutController::class,'update'])->name('update-about');
 
-Route::get('/admin/medias', [MediaController::class,'index'])->name('media-index');
+Route::get('/admin/medias', [MediaController::class,'index'])->name('index-media');
+Route::post('/admin/medias', [MediaController::class,'store'])->name('store-media');
 
 
 Route::get('/{any}', function () {
