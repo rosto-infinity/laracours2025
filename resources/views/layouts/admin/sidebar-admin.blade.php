@@ -26,7 +26,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="service.html">
+                        <a class="{{(request()->is('admin/services'))? 'nav-active' : ''}}"
+                         href="{{ route('index-service') }}">
                             <span><i class="fas fa-concierge-bell"></i></span>
                             <span>Services</span>
                         </a>
