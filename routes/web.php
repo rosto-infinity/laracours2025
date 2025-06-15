@@ -27,22 +27,11 @@ Route::prefix('/admin/medias')->group(function () {
 
 // Routes pour les services (CRUD complet)
 Route::prefix('/admin/services')->group(function () {
-    // Affichage de la liste
     Route::get('/', [ServiceController::class, 'index'])->name('index-service');
-    
-    // Création
-    Route::get('/create', [ServiceController::class, 'create'])->name('create-service');
     Route::post('/', [ServiceController::class, 'store'])->name('store-service');
-    
-    // Édition
     Route::get('/{id}/edit', [ServiceController::class, 'edit'])->name('edit-service');
-    Route::put('/{id}', [ServiceController::class, 'update'])->name('update-service');
-    
-    // Suppression
+    Route::patch('/{id}', [ServiceController::class, 'update'])->name('update-service');
     Route::delete('/{id}', [ServiceController::class, 'destroy'])->name('destroy-service');
-    
-    // Routes supplémentaires optionnelles
-    Route::get('/{id}', [ServiceController::class, 'show'])->name('show-service'); // Détail d'un service
 });
 
 

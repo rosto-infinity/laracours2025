@@ -15,29 +15,30 @@ class MediaController extends Controller
         $medias = Media::all();
         return view('admin.medias.index-medias', compact('medias'));
     }
+    
 
-   public function store(Request $request)
+public function store(Request $request)
 {
-    // Validation des données
     $validatedData = $request->validate([
-        'link' => 'required|url|max:255',
-        'icon' => 'required|string|max:50',
+        'link' => 'required|url|max:255|active_url', // Validation renforcée
+        'icon' => 'required|string|max:50|regex:/^[a-z0-9-]+$/i', // Format contrôlé
     ], [
         'link.required' => 'Le lien est obligatoire',
-        'link.url' => 'Le lien doit être une URL valide',
-        'link.max' => 'Le lien ne doit pas dépasser 255 caractères',
-        'icon.required' => 'L\'icône est obligatoire',
-        'icon.max' => 'L\'icône ne doit pas dépasser 50 caractères',
+        'link.url' => 'Le lien doit être une URL valide (ex: https://...)',
+        'link.active_url' => 'Le lien doit pointer vers un site actif',
+        'link.max' => 'Le lien ne doit pas dépasser :max caractères',
+        'icon.required' => 'Le code de l\'icône est obligatoire',
+        'icon.regex' => 'Format d\'icône invalide (utilisez des lettres, chiffres ou tirets)',
+        'icon.max' => 'Le code icône ne doit pas dépasser :max caractères',
     ]);
 
-    // Création du média avec les données validées
-    $media = new Media();
-    $media->link = $validatedData['link'];
-    $media->icon = $validatedData['icon'];
-    $media->save();
+    Media::create($validatedData); // Utilisation de create() au lieu de new + save()
 
-    return redirect()->route('index-media')->with('success', 'Réseau social ajouté avec succès');
+    return redirect()
+        ->route('index-media')
+        ->with('success', 'Réseau social ajouté avec succès');
 }
+
 public function destroy($id)
 {
     $media = Media::findOrFail($id);

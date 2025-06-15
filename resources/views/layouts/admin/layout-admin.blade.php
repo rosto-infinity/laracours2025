@@ -23,7 +23,7 @@
         @yield('content')
         
     </main>
-    <script src="asset('template/assets/js/admin.js')"></script>
+    <script src="{{ asset('template/assets/js/admin.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         const ctx = document.getElementById('myChart');
