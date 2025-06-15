@@ -40,7 +40,7 @@
                                 </button>
                                 
                                 <!-- Formulaire de suppression -->
-                                <form action="{{ route('destroy-madia', $media->id) }}" method="POST" class="delete-form">
+                                <form action="{{ route('destroy-media', $media->id) }}" method="POST" class="delete-form">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce média ?')">
