@@ -29,8 +29,8 @@ Route::prefix('/admin/medias')->group(function () {
 Route::prefix('/admin/services')->group(function () {
     Route::get('/', [ServiceController::class, 'index'])->name('index-service');
     Route::post('/', [ServiceController::class, 'store'])->name('store-service');
-    Route::get('/{id}/edit', [ServiceController::class, 'edit'])->name('edit-service');
-    Route::patch('/{id}', [ServiceController::class, 'update'])->name('update-service');
+    Route::get('/service/{service}/edit', [ServiceController::class, 'edit'])->name('edit-service');
+    Route::patch('/service/{service}/update', [ServiceController::class, 'update'])->name('update-service');
     Route::delete('/{id}', [ServiceController::class, 'destroy'])->name('destroy-service');
 });
 

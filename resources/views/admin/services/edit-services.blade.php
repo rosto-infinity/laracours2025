@@ -1,11 +1,11 @@
-    <!-------------- SERVICES MODAL --------------->
-            <div class="modal ">
-                <div class="modal-content">
-                    <h2>{{ $FormMode === 'edit' ? 'Modifier le service' : 'Créer un service' }}</h2>
-                    <span class="close-modal">×</span>
-                    
-                    <hr>
+@extends('layouts.admin.layout-admin')
+@section('content')
 
+<section class="services bg-white p-5"  >
+
+                    <form method="POST" action="{{ route('update-service',$service->id) }}">
+                      @csrf
+                      @method('PATCH')
                     <div>
                         <label>Nom du service</label>
                         <input type="text" name="name" value="{{ old('name', $service->name ?? '') }}"/>
@@ -26,17 +26,15 @@
                         @enderror
                     </div>
 
-                    <hr>
-           
-                    <div class="modal-footer">
-                        <button class="close-modal">
-                            Cancel
-                        </button>
-                        <button class="secondary close-modal">
+                     <button class="secondary close-modal">
                             <span><i class="fa fa-spinner fa-spin"></i></span>
-                           {{ $FormMode === 'edit' ? 'Update' : 'Save' }}
+                          Update
                         </button>
-                    </div>
 
-                </div>
-            </div>
+</form>
+
+
+
+
+</section>
+@endsection

@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Service;
@@ -10,66 +9,57 @@ class ServiceController extends Controller
 {
     public function index()
     {
-        $services = Service::all();
+        $services = Service::latest()->get(); // Tri par date récente
         return view('admin.services.index-services', compact('services'));
     }
 
-
-    /**
-     * Stocke un nouveau service
-     */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'icon' => 'required|string|max:50',
-            'description' => 'nullable|string|max:500'
-        ], [
-            'name.required' => 'Le nom du service est obligatoire',
-            'name.max' => 'Le nom ne doit pas dépasser 255 caractères',
-            'icon.required' => 'L\'icône est obligatoire',
-            'icon.max' => 'L\'icône ne doit pas dépasser 50 caractères',
-        ]);
+       $validatedData = $request->validate([
+    'name' => 'required|string|max:255',
+    'icon' => 'required|string|max:50',
+    'description' => 'required|string|max:500'
+], [
+    'name.required' => 'Le nom est requis.',
+    'name.string' => 'Le nom doit être une chaîne de caractères.',
+    'name.max' => 'Le nom ne peut pas dépasser 255 caractères.',
+    
+    'icon.required' => 'L\'icône est requise.',
+    'icon.string' => 'L\'icône doit être une chaîne de caractères.',
+    'icon.max' => 'L\'icône ne peut pas dépasser 50 caractères.',
+    
+    'description.required' => 'La description est requise.',
+    'description.string' => 'La description doit être une chaîne de caractères.',
+    'description.max' => 'La description ne peut pas dépasser 500 caractères.',
+]);
 
-// https://laravel.com/docs/12.x/eloquent
-
-    $service = new Service($validatedData);
-    $service->save();
+        Service::create($validatedData);
 
         return redirect()->route('index-service')
             ->with('success', 'Service créé avec succès');
     }
 
-    /**
-     * Affiche le formulaire d'édition
-     */
     public function edit($id)
     {
         $service = Service::findOrFail($id);
-        return view('admin.services.edit-service', compact('service'));
+        return view('admin.services.edit-services', compact('service'));
     }
-
-    /**
-     * Met à jour un service existant
-     */
     public function update(Request $request, $id)
     {
+        $service = Service::findOrFail($id);
+        
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'icon' => 'required|string|max:50',
-            'description' => 'nullable|string'
+            'description' => 'nullable|string|max:500'
         ]);
 
-        $service = Service::findOrFail($id);
         $service->update($validatedData);
 
         return redirect()->route('index-service')
             ->with('success', 'Service mis à jour avec succès');
     }
 
-    /**
-     * Supprime un service
-     */
     public function destroy($id)
     {
         $service = Service::findOrFail($id);
