@@ -1767,8 +1767,7 @@ opacity: 95%;
     .setting-wrapper {
         display: grid;
         grid-template-columns: 1fr minmax(auto, 66rem);
-        grid-gap: 10px;
-        
+        grid-gap: 10px;   
     }
 
 .nav-setting-wrapper {

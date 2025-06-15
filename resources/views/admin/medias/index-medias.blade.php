@@ -1,38 +1,13 @@
-@extends('layouts.admin.layout-admin')
+@extends('layouts.admin.layout-admin')   
+
 @section('content')
-      <!--==================== MEDIAS SETTING ====================-->
+     <!--==================== MEDIAS SETTING ====================-->
         <section class="setting" id="setting">
             <div class="setting-wrapper">
-                <div class="setting_nav">
-                    <div class="setting-titlebar">
-                        <img src="../../template/assets/img/avatar.jpg" alt="" class="setting-avatar">
-                        <p>Natalia Brakux</p>
-                    </div>
-                    <nav class="nav">
-                        <div class="nav-setting-wrapper">
-                            <div class="nav-list">
-                                <ul class="nav-list-item-setting">
-                                    <li>
-                                        <a aria-current="page" href="/admin/abouts" class="router-link-active nav-active setting-link"><span><i class="fas fa-cog"></i></span><span>About Me</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <ul class="nav-list-item-setting">
-                                    <li>
-                                        <a aria-current="page" href="/admin/abouts" class="setting-link"><span><i class="fas fa-cog"></i></span><span>My social media</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-                <div class="setting_content">
-                     <section class="about" id="about">
-                      
-                      <div classs="titlebar mb-2">
-                       <h1> Medias</h1>
-                      </div>
+                
+                @include('layouts.admin.nav-admin')
+
+                <div class="card-wrapper" style="margin-top:-5px">
                     <div class="wrapper_left">
                         <div class="card">
                             <h2>Social media</h2>
@@ -69,12 +44,11 @@
                             </form>
                         </div>
                     </div>
-                   
+                    <div class="wrapper_right hidden">
+                           
+                    </div>
                 </div>
-                        
-                       
-                    </section>
-                </div>
+                
             </div>
         </section>
 @endsection
