@@ -1,12 +1,7 @@
 <form action="{{ route('store-media') }}" method="post" class="media-form">
     @csrf
     
-    <!-- Messages flash -->
-    @if(session('success'))
-        <div class="bg-green-200 text-green-700 p-2">
-            {{ session('success') }}
-        </div>
-    @endif
+    
     
     {{-- @if($errors->any())
         <div class="alert alert-danger">
