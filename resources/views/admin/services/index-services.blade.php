@@ -9,7 +9,7 @@
                 <button class="open-modal">New Service</button>
             </div>
 
-        <!-- Affichage des messages flash -->
+        <!-- -Affichage des messages flash -->
     <!-- Affichage des messages flash avec Tailwind CSS -->
 @if(session('success'))
     <div class="p-2.5 text-xl mb-4 rounded bg-green-100 text-green-800 border-l-4 border-green-500">
