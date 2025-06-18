@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\Admin\AboutController;
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\MediaController;
-use App\Http\Controllers\Admin\ServiceController;
-use App\Http\Controllers\PageController;
 use App\Models\Service;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\MediaController;
+use App\Http\Controllers\Admin\SkillController;
+use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\DashboardController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -32,6 +33,14 @@ Route::prefix('/admin/services')->group(function () {
     Route::get('/service/{service}/edit', [ServiceController::class, 'edit'])->name('edit-service');
     Route::patch('/service/{service}/update', [ServiceController::class, 'update'])->name('update-service');
     Route::delete('/{id}', [ServiceController::class, 'destroy'])->name('destroy-service');
+});
+// Routes pour les services (CRUD complet)
+Route::prefix('/admin/skills')->group(function () {
+    Route::get('/', [SkillController::class, 'index'])->name('index-skill');
+    Route::post('/', [SkillController::class, 'store'])->name('store-skill');
+    Route::get('/skill/{skill}/edit', [SkillController::class, 'edit'])->name('edit-skill');
+    Route::patch('/skill/{skill}/update', [SkillController::class, 'update'])->name('update-skill');
+    Route::delete('/{id}', [SkillController::class, 'destroy'])->name('destroy-skill');
 });
 
 

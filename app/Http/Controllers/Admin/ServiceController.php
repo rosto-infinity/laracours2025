@@ -7,9 +7,14 @@ use App\Http\Controllers\Controller;
 
 class ServiceController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $services = Service::latest()->get(); // Tri par date récente
+        // $services = Service::latest()->get(); // Tri par date récente
+
+        //Utilisation de la méthode filter du modèle  Service
+        $servicesQuery = Service::filter($request);       
+        $services = $servicesQuery->paginate(14); // Tri par date récente
+
         return view('admin.services.index-services', compact('services'));
     }
 

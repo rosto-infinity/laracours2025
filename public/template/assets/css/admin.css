@@ -134,7 +134,10 @@ h6 {
   font-weight: 400;
   margin: 0;
 }
-
+ nav div a{
+  color:red;
+  visibility: visible;
+}
 h1 {
   font-size: 26px;
   line-height: 1;

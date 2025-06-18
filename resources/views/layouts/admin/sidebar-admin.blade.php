@@ -33,7 +33,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="skill.html">
+                        <a class="{{(request()->is('admin/skills'))? 'nav-active' : ''}}"
+                        href="{{ route('index-skill') }}">
                             <span><i class="fas fa-lightbulb"></i></span>
                             <span>Skills</span>
                         </a>
