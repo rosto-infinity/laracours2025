@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             AboutSeeder::class,
             MediaSeeder::class,
-            ServiceSeeder::class
+            ServiceSeeder::class,
+            SkillSeeder::class,
           
         ]);
 

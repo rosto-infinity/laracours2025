@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class SkillSeeder extends Seeder
 {
@@ -12,6 +13,28 @@ class SkillSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        DB::table("skills")->insert([
+            [
+                "name" => "PHP",
+                'proficiency' => '90',                
+                'service_id' => '2',                
+            ],
+            [
+                "name" => "DART",
+                'proficienty' => '70',                
+                'service_id' => '4',                
+            ],
+            [
+                "name" => "PUTHON",
+                'proficiency' => '60',                
+                'service_id' => '14',                
+            ],
+            [
+                "name" => "AI",
+                'proficiency' => '90',                
+                'service_id' => '16',                
+            ],
+            
+        ]);
     }
 }

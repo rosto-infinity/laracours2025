@@ -37,14 +37,20 @@
                 <p>Service</p>
                 <p>Actions</p>
             </div>
-            <!-- item 1 -->
+           
+            @foreach ( $skills as $skill)
             <div class="skill_table-items">
-                <p>PHP</p>
+                <p>{{ $skill->name}}</p>
                 <div class="table_skills-bar">
                     <span class="table_skills-percentage" style="width: 90%;"></span>
-                    <strong class="max-w-20">90%</strong>
+                    <strong class="max-w-20">{{ $skill->proficiency}}%</strong>
                 </div>
-                <p>Backend Developer lorem20</p>
+                @if ($skill->service)
+                    
+                <p>{{ $skill->service->name}}</p>
+                @else
+                   <p></p> 
+                @endif
                 <div>
                     <button class="btn-icon success">
                         <i class="fas fa-pencil-alt"></i>
@@ -54,6 +60,9 @@
                     </button>
                 </div>
             </div>
+            
+               @endforeach
+            
             <div class="table-paginate">
                 <div class="pagination">
                     <a href="#" class="btn">&laquo;</a>

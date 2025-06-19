@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Service extends Model
 {
@@ -22,5 +23,10 @@ class Service extends Model
         }
 
         return $query;
+    }
+
+      public function skills(): HasMany
+    {
+        return $this->hasMany(Skill::class);
     }
 }

@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('skills', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->nullable();
+            $table->integer('proficiency')->nullable();
+             
+            // 2-Relation avec les services
+            $table->foreignId('service_id')
+                  ->nullable()
+                  ->constrained()
+                  ->onDelete('cascade');
             $table->timestamps();
         });
     }
