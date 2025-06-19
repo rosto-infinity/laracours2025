@@ -110,7 +110,7 @@
         </section>
         
         <div class=" bg-amber-300 justify-center items-center  h-20 z-10 relative  inline-flex rtl:flex-row-reverse shadow-sm rounded-md">
-            {{-- {{ $services->links() }} --}}
+            {{ $services->links() }}
         </div>
 
 

@@ -24,8 +24,8 @@
         
     </main>
     <script src="{{ asset('template/assets/js/admin.js') }}"></script>
-    {{-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> --}}
-    {{-- <script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
         const ctx = document.getElementById('myChart');
       
         new Chart(ctx, {
@@ -46,7 +46,7 @@
             }
           }
         });
-    </script> --}}
+    </script>
 </body>
 
 </html>

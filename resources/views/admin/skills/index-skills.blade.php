@@ -3,7 +3,7 @@
 
 @section('content')
     <!--==================== SKILLS ====================-->
-   <div class="max-w-full  flex items-center justify-center">
+   
     <section class="skills" id="skills">
         <div class="titlebar">
             <h1>Skills </h1>
@@ -42,7 +42,7 @@
             <div class="skill_table-items">
                 <p>{{ $skill->name}}</p>
                 <div class="table_skills-bar">
-                    <span class="table_skills-percentage" style="width: 90%;"></span>
+                    <span class="table_skills-percentage" style="width: {{ $skill->proficiency}}%;"></span>
                     <strong class="max-w-20">{{ $skill->proficiency}}%</strong>
                 </div>
                 @if ($skill->service)
@@ -74,7 +74,7 @@
             </div>
         </div>
         <!-------------- SKILLS MODAL --------------->
-        <div class="modal ">
+        <div class="modal">
             <div class="modal-content">
                 <h2>Create Skill</h2>
                 <span class="close-modal">×</span>
@@ -106,5 +106,5 @@
         </div>
     </section>
 
-    </div>
+   
 @endsection
