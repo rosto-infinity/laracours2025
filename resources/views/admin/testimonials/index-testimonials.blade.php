@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <div class="max-w-full  flex items-center justify-center">
+    <nav>
      <section class="testimonials" id="projects">
                 <div class="titlebar">
                     <h1>Testimonials </h1>
@@ -137,5 +137,5 @@
                     <button>Update Testimonial</button>
                 </div>
             </section><br><br><br> --}}
-</div>
+</nav>
 @endsection

@@ -40,25 +40,29 @@
                         </a>
                     </li>
                     <li>
-                        <a href="education.html">
+                        <a class="{{(request()->is('admin/educations'))? 'nav-active' : ''}}"
+                           href="{{ route('index-education') }}">
                             <span><i class="fas fa-graduation-cap"></i></span>
                             <span>Educations</span>
                         </a>
                     </li>
                     <li>
-                        <a href="experience.html">
+                        <a class="{{(request()->is('admin/experiences'))? 'nav-active' : ''}}"
+                           href="{{ route('index-experience') }}">
                             <span><i class="fas fa-briefcase"></i></span>
                             <span>Experiences</span>
                         </a>
                     </li>
                     <li>
-                        <a href="project.html">
+                        <a class="{{(request()->is('admin/projects'))? 'nav-active' : ''}}"
+                          href="{{ route('index-project') }}">
                             <span><i class="fas fa-tasks"></i></span>
                             <span>Projects</span>
                         </a>
                     </li>
                     <li>
-                        <a href="testimonial.html">
+                        <a class="{{(request()->is('admin/testimonials'))? 'nav-active' : ''}}"
+                          href="{{ route('index-testimonial') }}">
                             <span><i class="fas fa-comment-dots"></i></span>
                             <span>Testimonials</span>
                         </a>

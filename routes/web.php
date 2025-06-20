@@ -8,6 +8,10 @@ use App\Http\Controllers\Admin\MediaController;
 use App\Http\Controllers\Admin\SkillController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\EducationController;
+use App\Http\Controllers\Admin\ExperienceController;
+use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\TestimonialController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -41,6 +45,38 @@ Route::prefix('/admin/skills')->group(function () {
     Route::get('/skill/{skill}/edit', [SkillController::class, 'edit'])->name('edit-skill');
     Route::patch('/skill/{skill}/update', [SkillController::class, 'update'])->name('update-skill');
     Route::delete('/{id}', [SkillController::class, 'destroy'])->name('destroy-skill');
+});
+// Routes pour les educations (CRUD complet)
+Route::prefix('/admin/educations')->group(function () {
+    Route::get('/', [EducationController::class, 'index'])->name('index-education');
+    Route::post('/', [EducationController::class, 'store'])->name('store-education');
+    Route::get('/education/{education}/edit', [EducationController::class, 'edit'])->name('edit-education');
+    Route::patch('/education/{education}/update', [EducationController::class, 'update'])->name('update-education');
+    Route::delete('/{id}', [EducationController::class, 'destroy'])->name('destroy-education');
+});
+// Routes pour les experiences (CRUD complet)
+Route::prefix('/admin/experiences')->group(function () {
+    Route::get('/', [ExperienceController::class, 'index'])->name('index-experience');
+    Route::post('/', [ExperienceController::class, 'store'])->name('store-experience');
+    Route::get('/experience/{experience}/edit', [ExperienceController::class, 'edit'])->name('edit-experience');
+    Route::patch('/experience/{experience}/update', [ExperienceController::class, 'update'])->name('update-experience');
+    Route::delete('/{id}', [ExperienceController::class, 'destroy'])->name('destroy-experience');
+});
+// Routes pour les projets (CRUD complet)
+Route::prefix('/admin/projects')->group(function () {
+    Route::get('/', [ProjectController::class, 'index'])->name('index-project');
+    Route::post('/', [ProjectController::class, 'store'])->name('store-project');
+    Route::get('/project/{project}/edit', [ProjectController::class, 'edit'])->name('edit-project');
+    Route::patch('/project/{project}/update', [ProjectController::class, 'update'])->name('update-project');
+    Route::delete('/{id}', [ProjectController::class, 'destroy'])->name('destroy-project');
+});
+// Routes pour les testimonials (CRUD complet)
+Route::prefix('/admin/testimonials')->group(function () {
+    Route::get('/', [TestimonialController::class, 'index'])->name('index-testimonial');
+    Route::post('/', [TestimonialController::class, 'store'])->name('store-testimonial');
+    Route::get('/testimonial/{testimonial}/edit', [TestimonialController::class, 'edit'])->name('edit-testimonial');
+    Route::patch('/testimonial/{testimonial}/update', [TestimonialController::class, 'update'])->name('update-testimonial');
+    Route::delete('/{id}', [TestimonialController::class, 'destroy'])->name('destroy-testimonial');
 });
 
 

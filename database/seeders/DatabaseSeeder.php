@@ -20,6 +20,10 @@ class DatabaseSeeder extends Seeder
             MediaSeeder::class,
             ServiceSeeder::class,
             SkillSeeder::class,
+            EducationSeeder::class,
+            ExperienceSeeder::class,
+            ProjectSeeder::class,
+            TestimonialSeeder::class
           
         ]);
 

@@ -2,7 +2,7 @@
 
 
 @section('content')
-   <div class="max-w-full  flex items-center justify-center">
+<nav>
     <!--==================== EDUCATIONS ====================-->
              <section class="educations" id="educations">
                 <div class="titlebar">
@@ -85,8 +85,8 @@
                         </div>
                     </div>
                 </div>
-            </section>
+        </section>
 
-    </div>
+</nav>
        
 @endsection
