@@ -428,7 +428,7 @@
 
             <div class="services_modal">
                 <div class="services_modal-content">
-                    <h4 class="services_modal-title">{{ $service->name }}</h4>
+                    <h4 class="services_modal-title">{{ $service['name'] }}</h4>
                     <i class="uil uil-times services_modal-close"></i>
 
                     <div class="services_modal-description">
